@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import {Login}  from "./landing_page/signup/Login.jsx";
 import "./signup.css";
 export const Signup = () => {
   const [username, setUsername] = useState("");
@@ -53,7 +54,7 @@ export const Signup = () => {
         <button type="submit">Sign Up</button>
       </form>
       <p>
-        Already have an account? <Link to="/login">Login</Link>
+        Already have an account? <Link to="/logins">Login</Link>
       </p>
     </div>
   );
