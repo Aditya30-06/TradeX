@@ -17,7 +17,7 @@ mongoose.connect(url)
     .catch(err => console.error(" MongoDB connection error:", err));
 
 app.use(cors({
-    origin: [process.env.FRONTEND_URL, process.env.DASHBOARD_URL], 
+    origin: ["https://trade-x-6snf.vercel.app/signup", "https://trade-x-6snf.vercel.app/login"], 
   credentials: true,       
 }));
 app.use(cookieParser());
