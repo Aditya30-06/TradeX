@@ -2,9 +2,7 @@ import React from "react";
 import "./app.css";
 import HomePage from "./landing_page/home/HomePage";
 import { Signup } from "./landing_page/signup/Signup";
-import {Login}  from "./landing_page/signup/Login";
-// import DashboardApp from "../../dashboard/src/App.jsx";
-import { Routes, Route } from "react-router-dom";
+import { Login } from "./landing_page/signup/Login";
 import PricingPage from "./landing_page/pricing/PricingPage.jsx";
 import AboutPage from "./landing_page/about/AboutPage.jsx";
 import ProductsPage from "./landing_page/products/ProductsPage.jsx";
@@ -12,24 +10,25 @@ import SupportPage from "./landing_page/support/SupportPage.jsx";
 import Navbar from "./landing_page/Navbar.jsx";
 import Footer from "./landing_page/Footer.jsx";
 import NotFound from "./landing_page/NotFound.jsx";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+
 function App() {
   return (
-    <>
+    <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/signup" element={<Signup />}></Route>
-        <Route path="/logins" element={<Login />}></Route>
-        <Route path="/about" element={<AboutPage />}></Route>
-        <Route path="/products" element={<ProductsPage />}></Route>
-        <Route path="/pricing" element={<PricingPage />}></Route>
-        <Route path="/support" element={<SupportPage />}></Route>
-        {/* <Route path="/dashboard" element={<DashboardApp />}></Route> */}
-        <Route path="*" element={<NotFound />}></Route>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/logins" element={<Login />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/support" element={<SupportPage />} />
+        {/* <Route path="/dashboard" element={<DashboardApp />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
-
       <Footer />
-    </>
+    </Router>
   );
 }
 
