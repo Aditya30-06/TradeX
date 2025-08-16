@@ -18,7 +18,7 @@ export const Signup = () => {
       const data = await res.json();
       alert(data.message);
       if (data.success) {
-       window.location.href = "https://trade-x-lemon.vercel.app/";
+        window.location.href = "https://trade-x-lemon.vercel.app/";
       }
     } catch (err) {
       console.error(err);
@@ -53,9 +53,8 @@ export const Signup = () => {
         <button type="submit">Sign Up</button>
       </form>
       <p>
-        Already have an account? <a href="/login">Login</a>
+        Already have an account? <Link to="/Login">Login</Link>
       </p>
     </div>
   );
 };
-
