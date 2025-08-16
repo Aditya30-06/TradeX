@@ -1,190 +1,54 @@
-/* ========================
-   General body / background
-   ======================== */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #f9fafb, #e0f2fe);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-/* ========================
-   Card container
-   ======================== */
-.auth-card {
+.auth-container {
   background: #fff;
-  padding: 2.5rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  max-width: 400px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+  width: 350px;
+  margin: 50px auto;
   text-align: center;
-  transition: transform 0.2s ease-in-out;
 }
 
-.auth-card:hover {
-  transform: translateY(-3px);
+.auth-container h2 {
+  margin-bottom: 30px;
+  color: #333;
 }
 
-/* ========================
-   Titles
-   ======================== */
-.auth-title {
-  font-size: 26px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 6px;
-}
-
-.auth-subtitle {
-  font-size: 14px;
-  color: #6b7280;
-  margin-bottom: 24px;
-}
-
-/* ========================
-   Form styling
-   ======================== */
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.auth-input {
+.auth-container input {
   width: 100%;
-  padding: 14px 16px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  outline: none;
-  font-size: 14px;
-  transition: border 0.2s, box-shadow 0.2s;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-.auth-input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
-}
-
-/* ========================
-   Button
-   ======================== */
-.auth-button {
+.auth-container button {
   width: 100%;
-  padding: 14px 16px;
-  background: #3b82f6;
+  padding: 12px;
+  background: #007BFF;
+  border: none;
   color: #fff;
   font-size: 16px;
-  font-weight: 500;
-  border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  margin-top: 10px;
+  transition: background 0.3s ease;
 }
 
-.auth-button:hover {
-  background: #2563eb;
-  transform: translateY(-1px);
+.auth-container button:hover {
+  background: #0056b3;
 }
 
-/* ========================
-   Footer / Links
-   ======================== */
-.auth-footer {
-  margin-top: 18px;
-  font-size: 14px;
-  color: #374151;
+.auth-container p {
+  margin-top: 15px;
+  color: #666;
 }
 
-.auth-link {
-  color: #3b82f6;
-  font-weight: 500;
+.auth-container p a {
+  color: #007BFF;
   text-decoration: none;
 }
 
-.auth-link:hover {
+.auth-container p a:hover {
   text-decoration: underline;
-}
-
-/* ========================
-   Signup-specific wrapper
-   ======================== */
-.signup-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-}
-
-/* Optional: Signup card (if you want a separate class) */
-.signup-card {
-  width: 100%;
-  max-width: 400px;
-  background: #fff;
-  padding: 2.5rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  transition: transform 0.2s ease-in-out;
-}
-
-.signup-card:hover {
-  transform: translateY(-3px);
-}
-
-/* Signup titles */
-.signup-title {
-  font-size: 26px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 6px;
-}
-
-.signup-subtitle {
-  font-size: 14px;
-  color: #6b7280;
-  margin-bottom: 24px;
-}
-
-/* Signup form inputs and button inherit same styles as auth-form/auth-input/auth-button */
-
-/* Footer link for signup page */
-.login-link {
-  margin-top: 18px;
-  font-size: 14px;
-  color: #374151;
-}
-
-.login-link .highlight {
-  color: #3b82f6;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.login-link .highlight:hover {
-  text-decoration: underline;
-}
-
-/* ========================
-   Mobile responsiveness
-   ======================== */
-@media (max-width: 480px) {
-  .auth-card,
-  .signup-card {
-    padding: 2rem 1.5rem;
-    width: 90%;
-  }
-
-  .auth-input,
-  .auth-button,
-  .signup-form input,
-  .signup-form button {
-    padding: 12px 14px;
-    font-size: 14px;
-  }
 }
