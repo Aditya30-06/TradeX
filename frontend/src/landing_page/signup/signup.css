@@ -52,3 +52,76 @@
 .auth-container p a:hover {
   text-decoration: underline;
 }
+
+.signup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  padding: 20px;
+}
+
+.signup-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.signup-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1d2671;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signup-form input {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.signup-form input:focus {
+  border-color: #1d2671;
+}
+
+.signup-form button {
+  background: #1d2671;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: bold;
+}
+
+.signup-form button:hover {
+  background: #c33764;
+}
+
+.login-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-link .highlight {
+  color: #c33764;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link .highlight:hover {
+  text-decoration: underline;
+}

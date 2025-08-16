@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {Login}  from "./landing_page/signup/Login.jsx";
 import "./signup.css";
+
 export const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -27,35 +27,42 @@ export const Signup = () => {
   };
 
   return (
-    <div className="auth-container">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSignup}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Sign Up</button>
-      </form>
-      <p>
-        Already have an account? <Link to="/logins">Login</Link>
-      </p>
+    <div className="signup-wrapper">
+      <div className="signup-card">
+        <h2 className="signup-title">Create an Account</h2>
+
+        <form onSubmit={handleSignup} className="signup-form">
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Sign Up</button>
+        </form>
+
+        <p className="login-link">
+          Already have an account?{" "}
+          <Link to="/login" className="highlight">
+            Login
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };
