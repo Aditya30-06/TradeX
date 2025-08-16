@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./signup.css";
 import { Link } from "react-router-dom";
+import "./signup.css";
 export const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -9,7 +9,7 @@ export const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3002/signup", {
+      const res = await fetch("https://tradex-ccjq.onrender.com/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password }),
