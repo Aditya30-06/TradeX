@@ -58,7 +58,7 @@ export const Signup = () => {
 
         <p className="login-link">
           Already have an account?{" "}
-          <Link to="/login" className="highlight">
+          <Link to="/logins" className="highlight">
             Login
           </Link>
         </p>
