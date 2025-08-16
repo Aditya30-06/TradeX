@@ -16,13 +16,13 @@ const WatchList = () => {
   const [allHoldings, setallHoldings] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/getHoldings").then((res) => {
+    axios.get("https://tradex-ccjq.onrender.com/getHoldings").then((res) => {
       setallHoldings(res.data);
     });
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/getWatchList").then((res) => {
+    axios.get("https://tradex-ccjq.onrender.com/getWatchList").then((res) => {
       setallWatchList(res.data);
     });
   }, []);
