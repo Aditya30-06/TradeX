@@ -18,7 +18,7 @@ export const Signup = () => {
       const data = await res.json();
       alert(data.message);
       if (data.success) {
-       window.location.href = "http://localhost:5173";
+       window.location.href = "https://trade-x-lemon.vercel.app/";
       }
     } catch (err) {
       console.error(err);
