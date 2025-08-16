@@ -9,7 +9,7 @@ export const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("https://tradex-ccjq.onrender.com/signup", {
+      const res = await fetch("https://tradex-3-wivw.onrender.com/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password }),
