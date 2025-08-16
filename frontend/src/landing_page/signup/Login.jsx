@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./signup.css";
+import "./signup.css"; // same CSS for both signup & login
 import { Link } from "react-router-dom";
 
 export const Login = () => {
@@ -28,35 +28,41 @@ export const Login = () => {
 
   return (
     <div className="auth-container">
-      <h2 className="auth-title">Welcome Back 👋</h2>
-      <p className="auth-subtitle">
-        Access your account to continue trading securely.
-      </p>
+      <div className="auth-card">
+        <h2 className="auth-title">Welcome Back 👋</h2>
+        <p className="auth-subtitle">
+          Access your account to continue trading securely.
+        </p>
 
-      <form onSubmit={handleLogin} className="auth-form">
-        <input
-          type="email"
-          placeholder="Enter your email address"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit" className="auth-button">Log In</button>
-      </form>
+        <form onSubmit={handleLogin} className="auth-form">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="auth-input"
+          />
+          <input
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="auth-input"
+          />
+          <button type="submit" className="auth-button">
+            Log In
+          </button>
+        </form>
 
-      <p className="signup-link">
-        New to TradeX?{" "}
-        <Link to="/signup" className="highlight">
-          Create an account
-        </Link>
-      </p>
+        <p className="auth-footer">
+          New to TradeX?{" "}
+          <Link to="/signup" className="auth-link">
+            Create an account
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };
