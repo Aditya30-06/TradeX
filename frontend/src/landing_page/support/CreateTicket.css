@@ -1,0 +1,27 @@
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1a1a1a; /* Zerodha main text color */
+}
+
+.topic-heading {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.link-list {
+  list-style: none;
+  padding-left: 0;
+  line-height: 1.8;
+}
+
+.link-list a {
+  text-decoration: none;
+  color: #3380de; /* Zerodha link blue */
+  font-size: 0.95rem;
+}
+
+.link-list a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,43 @@
+.support {
+    background-color: rgb(68, 142, 232);
+    color: white;
+}
+
+.support a {
+    color: #ffefc4;
+    /* softer beige tone */
+    text-decoration: none;
+}
+
+.support a:hover {
+    text-decoration: underline;
+    color: #fff5d9;
+}
+
+.supportWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+
+
+
+.links-list a {
+    display: block;
+    margin-bottom: 6px;
+}
+
+input.form-control {
+    border-radius: 6px;
+    border: none;
+    padding: 10px;
+}
+.support input {
+  padding: 10px 15px; 
+  border-radius: 6px;
+  border: none;
+  width: 80%; 
+}

@@ -1,0 +1,372 @@
+require('dotenv').config({ path: "../.env" });
+const mongoose = require("mongoose");
+
+const { HoldingModel } = require("../models/HoldingModel")
+const { PostionModel } = require("../models/PostionModel")
+const { WatchListModel } = require("../models/WatchListModel")
+
+const url = process.env.MONGO_URL;
+const Holdingdata = [
+    { name: "TCS", quantity: 10, avg: 3500, price: 3650, net: 4.28, day: 1.37 },
+    {
+        name: "Infosys",
+        quantity: 20,
+        avg: 1500,
+        price: 1480,
+        net: -1.33,
+        day: -0.54,
+    },
+    {
+        name: "Reliance",
+        quantity: 15,
+        avg: 2500,
+        price: 2580,
+        net: 3.2,
+        day: 0.78,
+    },
+    {
+        name: "HDFC Bank",
+        quantity: 25,
+        avg: 1600,
+        price: 1655,
+        net: 3.44,
+        day: 0.91,
+    },
+    {
+        name: "ICICI Bank",
+        quantity: 30,
+        avg: 950,
+        price: 980,
+        net: 3.16,
+        day: 0.77,
+    },
+    {
+        name: "Axis Bank",
+        quantity: 18,
+        avg: 780,
+        price: 770,
+        net: -1.28,
+        day: -0.52,
+    },
+    { name: "SBI", quantity: 40, avg: 620, price: 640, net: 3.22, day: 0.79 },
+    { name: "Wipro", quantity: 22, avg: 400, price: 405, net: 1.25, day: 0.5 },
+    {
+        name: "Tech Mahindra",
+        quantity: 17,
+        avg: 1200,
+        price: 1180,
+        net: -1.67,
+        day: -0.42,
+    },
+    {
+        name: "HCL Tech",
+        quantity: 14,
+        avg: 1100,
+        price: 1125,
+        net: 2.27,
+        day: 0.91,
+    },
+    {
+        name: "Kotak Mahindra Bank",
+        quantity: 12,
+        avg: 1800,
+        price: 1790,
+        net: -0.56,
+        day: -0.22,
+    },
+    { name: "DMart", quantity: 10, avg: 3500, price: 3550, net: 1.43, day: 0.4 },
+    {
+        name: "Mphasis",
+        quantity: 8,
+        avg: 2200,
+        price: 2180,
+        net: -0.91,
+        day: -0.3,
+    },
+    {
+        name: "Persistent",
+        quantity: 6,
+        avg: 3500,
+        price: 3600,
+        net: 2.86,
+        day: 0.8,
+    },
+    { name: "Cipla", quantity: 15, avg: 1100, price: 1120, net: 1.82, day: 0.55 },
+    {
+        name: "Sun Pharma",
+        quantity: 18,
+        avg: 1000,
+        price: 1015,
+        net: 1.5,
+        day: 0.42,
+    },
+    {
+        name: "Dr Reddy's",
+        quantity: 7,
+        avg: 5600,
+        price: 5650,
+        net: 0.89,
+        day: 0.3,
+    },
+    {
+        name: "Divi's Labs",
+        quantity: 9,
+        avg: 3500,
+        price: 3480,
+        net: -0.57,
+        day: -0.25,
+    },
+    { name: "Biocon", quantity: 20, avg: 250, price: 255, net: 2.0, day: 0.65 },
+    { name: "Lupin", quantity: 12, avg: 950, price: 965, net: 1.58, day: 0.5 },
+    {
+        name: "Glenmark",
+        quantity: 14,
+        avg: 700,
+        price: 710,
+        net: 1.43,
+        day: 0.47,
+    },
+    {
+        name: "Torrent Pharma",
+        quantity: 8,
+        avg: 2000,
+        price: 2020,
+        net: 1.0,
+        day: 0.38,
+    },
+];
+const Watchlistdata = [
+    { name: "Reliance Industries", price: 2845.5, percent: 0.45, isDown: false },
+    {
+        name: "Tata Consultancy Services",
+        price: 3867.2,
+        percent: -0.28,
+        isDown: true,
+    },
+    { name: "HDFC Bank", price: 1723.15, percent: 1.12, isDown: false },
+    { name: "Infosys", price: 1536.6, percent: -0.35, isDown: true },
+    { name: "ICICI Bank", price: 1025.3, percent: 0.92, isDown: false },
+    { name: "Adani Enterprises", price: 3148.4, percent: -1.25, isDown: true },
+    { name: "Axis Bank", price: 974.25, percent: 0.67, isDown: false },
+    { name: "Larsen & Toubro", price: 3589.75, percent: -0.14, isDown: true },
+    { name: "Bharti Airtel", price: 1248.55, percent: 0.23, isDown: false },
+    { name: "Hindustan Unilever", price: 2689.9, percent: -0.18, isDown: true },
+];
+
+const PositionData = [
+    {
+        product: "CNC",
+        name: "Reliance Industries",
+        qty: 50,
+        avg: 2800.5,
+        price: 2845.5,
+        net: 2.0,
+        day: 0.45,
+        isLoss: false,
+    },
+    {
+        product: "MIS",
+        name: "Tata Consultancy Services",
+        qty: 20,
+        avg: 3900.0,
+        price: 3867.2,
+        net: -0.84,
+        day: -0.28,
+        isLoss: true,
+    },
+    {
+        product: "CNC",
+        name: "HDFC Bank",
+        qty: 100,
+        avg: 1704.0,
+        price: 1723.15,
+        net: 1.12,
+        day: 1.12,
+        isLoss: false,
+    },
+    {
+        product: "CNC",
+        name: "Infosys",
+        qty: 60,
+        avg: 1550.0,
+        price: 1536.6,
+        net: -0.86,
+        day: -0.35,
+        isLoss: true,
+    },
+    {
+        product: "MIS",
+        name: "ICICI Bank",
+        qty: 80,
+        avg: 1016.0,
+        price: 1025.3,
+        net: 0.91,
+        day: 0.92,
+        isLoss: false,
+    },
+    {
+        product: "CNC",
+        name: "Adani Enterprises",
+        qty: 30,
+        avg: 3200.0,
+        price: 3148.4,
+        net: -1.61,
+        day: -1.25,
+        isLoss: true,
+    },
+    {
+        product: "MIS",
+        name: "Axis Bank",
+        qty: 75,
+        avg: 968.0,
+        price: 974.25,
+        net: 0.64,
+        day: 0.67,
+        isLoss: false,
+    },
+    {
+        product: "CNC",
+        name: "Larsen & Toubro",
+        qty: 40,
+        avg: 3600.0,
+        price: 3589.75,
+        net: -0.28,
+        day: -0.14,
+        isLoss: true,
+    },
+    {
+        product: "MIS",
+        name: "Bharti Airtel",
+        qty: 55,
+        avg: 1245.0,
+        price: 1248.55,
+        net: 0.29,
+        day: 0.23,
+        isLoss: false,
+    },
+    {
+        product: "CNC",
+        name: "Hindustan Unilever",
+        qty: 65,
+        avg: 2700.0,
+        price: 2689.9,
+        net: -0.37,
+        day: -0.18,
+        isLoss: true,
+    },
+    {
+        product: "CNC",
+        name: "Maruti Suzuki",
+        qty: 45,
+        avg: 9100.0,
+        price: 9185.25,
+        net: 0.94,
+        day: 0.56,
+        isLoss: false,
+    },
+    {
+        product: "MIS",
+        name: "State Bank of India",
+        qty: 90,
+        avg: 630.0,
+        price: 622.15,
+        net: -1.24,
+        day: -0.48,
+        isLoss: true,
+    },
+    {
+        product: "CNC",
+        name: "Wipro",
+        qty: 120,
+        avg: 450.0,
+        price: 453.6,
+        net: 0.8,
+        day: 0.35,
+        isLoss: false,
+    },
+    {
+        product: "MIS",
+        name: "Tech Mahindra",
+        qty: 50,
+        avg: 1220.0,
+        price: 1211.4,
+        net: -0.7,
+        day: -0.25,
+        isLoss: true,
+    },
+    {
+        product: "CNC",
+        name: "Asian Paints",
+        qty: 70,
+        avg: 3300.0,
+        price: 3314.2,
+        net: 0.43,
+        day: 0.19,
+        isLoss: false,
+    },
+    {
+        product: "MIS",
+        name: "Sun Pharma",
+        qty: 65,
+        avg: 1075.0,
+        price: 1068.4,
+        net: -0.61,
+        day: -0.21,
+        isLoss: true,
+    },
+    {
+        product: "CNC",
+        name: "HCL Technologies",
+        qty: 80,
+        avg: 1450.0,
+        price: 1458.25,
+        net: 0.57,
+        day: 0.28,
+        isLoss: false,
+    },
+    {
+        product: "MIS",
+        name: "Bajaj Finance",
+        qty: 25,
+        avg: 6900.0,
+        price: 6885.5,
+        net: -0.21,
+        day: -0.08,
+        isLoss: true,
+    },
+    {
+        product: "MIS",
+        name: "SBI Life Insurance",
+        qty: 40,
+        avg: 1350.0,
+        price: 1345.2,
+        net: -0.36,
+        day: -0.18,
+        isLoss: true,
+    },
+];
+
+async function addData() {
+    try {
+        await mongoose.connect(url);
+        console.log("Database Connected")
+
+        await HoldingModel.deleteMany({})
+        await PostionModel.deleteMany({})
+        await WatchListModel.deleteMany({})
+        console.log("Existing Data Cleared")
+
+        await HoldingModel.insertMany(Holdingdata);
+        await PostionModel.insertMany(PositionData);
+        await WatchListModel.insertMany(Watchlistdata);
+        console.log("Data Added")
+
+        mongoose.connection.close();
+    }
+    catch (err) {
+        console.error("❌ Error seeding DB:", err);
+        mongoose.connection.close();
+    }
+}
+
+addData();

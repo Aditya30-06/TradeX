@@ -1,0 +1,14 @@
+.navbar {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+}
+
+.navbar .nav-link {
+  color: #424242;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar .nav-link:hover {
+  color: #387ed1; /* Zerodha blue */
+  text-decoration: none;
+}

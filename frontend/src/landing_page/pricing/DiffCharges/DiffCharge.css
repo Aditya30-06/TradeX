@@ -1,0 +1,9 @@
+h4 {
+    color: #1b75e2ff;
+    transition: color 0.2s ease-in-out;
+}
+
+h4:hover {
+    color: grey;
+    cursor: pointer;
+}

@@ -1,0 +1,20 @@
+.footer-text-heading {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.footer .nav-link {
+    opacity: .7;
+    font-family: 'Inter', sans-serif;
+    font-size: small;
+}
+
+.footer-text  {
+    opacity: .7;
+    font-size:x-small;
+}
+
+.icon:hover{
+color: #387ED1;
+
+}
