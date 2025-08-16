@@ -2,7 +2,7 @@ import React from "react";
 import "./app.css";
 import HomePage from "./landing_page/home/HomePage";
 import { Signup } from "./landing_page/signup/Signup";
-import  Login  from "./landing_page/signup/Login.jsx";
+import {Login}  from "./landing_page/signup/Login.jsx";
 // import DashboardApp from "../../dashboard/src/App.jsx";
 import { Routes, Route } from "react-router-dom";
 import PricingPage from "./landing_page/pricing/PricingPage.jsx";
