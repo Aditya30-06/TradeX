@@ -53,7 +53,7 @@ export const Signup = () => {
         <button type="submit">Sign Up</button>
       </form>
       <p>
-        Already have an account? <Link to="/Login">Login</Link>
+        Already have an account? <Link to="/login">Login</Link>
       </p>
     </div>
   );
