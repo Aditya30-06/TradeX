@@ -15,7 +15,7 @@ export const GeneralContextProvider = (props) => {
     try {
       
       const res = await axios.get(
-        `http://localhost:3002/stocks/${encodeURIComponent(uid)}`
+        `https://tradex-ccjq.onrender.com/${encodeURIComponent(uid)}`
       );
 
       const stockData = res.data;
