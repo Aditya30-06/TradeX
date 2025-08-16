@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./signup.css";
 import { Link } from "react-router-dom";
+
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,26 +28,34 @@ export const Login = () => {
 
   return (
     <div className="auth-container">
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+      <h2 className="auth-title">Welcome Back 👋</h2>
+      <p className="auth-subtitle">
+        Access your account to continue trading securely.
+      </p>
+
+      <form onSubmit={handleLogin} className="auth-form">
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Enter your email address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Enter your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Login</button>
+        <button type="submit" className="auth-button">Log In</button>
       </form>
-      <p>
-        Don't have an account? <Link to="/signup">Signup</Link>
+
+      <p className="signup-link">
+        New to TradeX?{" "}
+        <Link to="/signup" className="highlight">
+          Create an account
+        </Link>
       </p>
     </div>
   );
