@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./signup.css";
-
+import { Link } from "react-router-dom";
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -46,7 +46,7 @@ export const Login = () => {
         <button type="submit">Login</button>
       </form>
       <p>
-        Don't have an account? <a href="/signup">Sign Up</a>
+        Don't have an account? <Link to="/signup">Signup Now</Link>
       </p>
     </div>
   );
