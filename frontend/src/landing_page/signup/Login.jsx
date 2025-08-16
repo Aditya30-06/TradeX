@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./signup.css"; // same CSS for both signup & login
+import "./signup.css"; 
 import { Link } from "react-router-dom";
 
 export const Login = () => {
