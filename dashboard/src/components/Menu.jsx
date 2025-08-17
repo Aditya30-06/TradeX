@@ -32,18 +32,18 @@ const Menu = () => {
             </Link>
           </li>
           <li>
-           <Link
+            <Link
               style={{ textDecoration: "none" }}
               to="/orders"
               onClick={() => handleMenuClick(1)}
             >
               <p className={selectedOption === 1 ? activeMenuClass : menuClass}>
-               Orders
+                Orders
               </p>
             </Link>
           </li>
           <li>
-           <Link
+            <Link
               style={{ textDecoration: "none" }}
               to="/holdings"
               onClick={() => handleMenuClick(2)}
@@ -82,11 +82,11 @@ const Menu = () => {
               onClick={() => handleMenuClick(5)}
             >
               <p className={selectedOption === 5 ? activeMenuClass : menuClass}>
-              Apps
+                Apps
               </p>
             </Link>
           </li>
-        <li>
+          <li>
             <a
               href="https://trade-x-6snf.vercel.app/#/"
               style={{
@@ -107,8 +107,7 @@ const Menu = () => {
             >
               Back to TradeX
             </a>
-
-         
+          </li>
         </ul>
         <hr />
         <div className="profile" onClick={handleProfileClick}>
