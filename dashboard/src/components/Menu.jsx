@@ -86,6 +86,18 @@ const Menu = () => {
               </p>
             </Link>
           </li>
+         <li>
+  <a 
+    href="https://trade-x-6snf.vercel.app/#/" 
+    style="text-decoration:none; color:#1f2937; font-weight:500; font-size:14px; transition:color 0.2s ease;"
+    onmouseover="this.style.color='#2563eb'; this.style.textDecoration='underline';"
+    onmouseout="this.style.color='#1f2937'; this.style.textDecoration='none';"
+  >
+    Back to TradeX
+  </a>
+</li>
+
+         
         </ul>
         <hr />
         <div className="profile" onClick={handleProfileClick}>
