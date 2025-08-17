@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { React, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Menu = () => {
@@ -32,18 +32,18 @@ const Menu = () => {
             </Link>
           </li>
           <li>
-            <Link
+           <Link
               style={{ textDecoration: "none" }}
               to="/orders"
               onClick={() => handleMenuClick(1)}
             >
               <p className={selectedOption === 1 ? activeMenuClass : menuClass}>
-                Orders
+               Orders
               </p>
             </Link>
           </li>
           <li>
-            <Link
+           <Link
               style={{ textDecoration: "none" }}
               to="/holdings"
               onClick={() => handleMenuClick(2)}
@@ -82,31 +82,9 @@ const Menu = () => {
               onClick={() => handleMenuClick(5)}
             >
               <p className={selectedOption === 5 ? activeMenuClass : menuClass}>
-                Apps
+              Apps
               </p>
             </Link>
-          </li>
-          <li>
-            <a
-              href="https://trade-x-6snf.vercel.app/#/"
-              style={{
-                textDecoration: "none",
-                color: "#1f2937",
-                fontWeight: 500,
-                fontSize: "14px",
-                transition: "color 0.2s ease",
-              }}
-              onMouseOver={(e) => {
-                e.target.style.color = "#2563eb";
-                e.target.style.textDecoration = "underline";
-              }}
-              onMouseOut={(e) => {
-                e.target.style.color = "#1f2937";
-                e.target.style.textDecoration = "none";
-              }}
-            >
-              Back to TradeX
-            </a>
           </li>
         </ul>
         <hr />
