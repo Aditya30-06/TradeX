@@ -1,4 +1,6 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
+
 import "./app.css";
 import HomePage from "./landing_page/home/HomePage";
 import { Signup } from "./landing_page/signup/Signup";
@@ -10,11 +12,10 @@ import SupportPage from "./landing_page/support/SupportPage.jsx";
 import Navbar from "./landing_page/Navbar.jsx";
 import Footer from "./landing_page/Footer.jsx";
 import NotFound from "./landing_page/NotFound.jsx";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -28,7 +29,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-    </Router>
+    </>
   );
 }
 
