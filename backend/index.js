@@ -17,7 +17,7 @@ mongoose.connect(url)
     .catch(err => console.error(" MongoDB connection error:", err));
 
 app.use(cors({
-    origin: ["https://trade-x-6snf.vercel.app", "https://trade-x-lemon.vercel.app" ,"https://tradex-3-wivw.onrender.com"], 
+    origin: ["https://trade-x-6snf.vercel.app", "https://trade-x-lemon.vercel.app" ,"https://tradex-3-wivw.onrender.com" ,"http://localhost:5173"], 
   credentials: true,       
 }));
 app.use(cookieParser());

@@ -11,7 +11,6 @@ const Menu = () => {
   const handleProfileClick = (index) => {
     setisProfileDropDown(!isProfileDropDownOpen);
   };
-
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
 
