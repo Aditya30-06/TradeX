@@ -201,4 +201,3 @@ For support and questions:
 
 **Built with ❤️ by the TradeX Team**
 
-*Last updated: December 2024*
