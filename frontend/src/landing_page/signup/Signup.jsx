@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./auth.css"; // renamed CSS file for both login & signup
+import "./signup.css"; 
 
 export const Signup = () => {
   const [username, setUsername] = useState("");
