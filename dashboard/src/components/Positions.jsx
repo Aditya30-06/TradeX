@@ -6,7 +6,7 @@ import axios from "axios";
 const Positions = () => {
   const [allPostions, setallPostions] = useState([]);
   useEffect(() => {
-    axios.get("https://tradex-ccjq.onrender.com/getPostions").then((res) => {
+    axios.get("https://tradex-qqge.onrender.com/getPostions").then((res) => {
       setallPostions(res.data);
     });
   },[]);
