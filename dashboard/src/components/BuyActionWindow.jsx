@@ -26,7 +26,7 @@ const BuyActionWindow = ({ uid, stockPrice }) => {
       return;
     }
 
-    await axios.post("https://tradex-3-wivw.onrender.com/newOrder", {
+    await axios.post("https://tradex-qqge.onrender.com/newOrder", {
       name: uid,
       qty: stockQuantity,
       price: StockPrice,
