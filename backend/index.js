@@ -17,9 +17,16 @@ mongoose.connect(url)
     .catch(err => console.error(" MongoDB connection error:", err));
 
 app.use(cors({
-    origin: ["https://trade-x-6snf.vercel.app", "https://trade-x-lemon.vercel.app" ,"https://tradex-qqge.onrender.com/" ,"http://localhost:5173"], 
-  credentials: true,       
+  origin: [
+    "https://trade-x-6snf.vercel.app",
+    "https://trade-x-lemon.vercel.app",
+    "https://tradex-qqge.onrender.com", // removed trailing slash
+    "http://localhost:5173"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
